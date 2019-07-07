@@ -10,9 +10,11 @@
     <%= @book.author %>
   </p>
 
-  <p class="thumbnail">
-    <%= @book.picture %>
-  </p>
+  <p>
+  <% if @book.picture.attached? %>
+    <%= image_tag @book.picture.variant(resize: "128x128") %>
+  <% end %>
+  </P>
 
   <%= link_to 'Edit', edit_book_path(@book) %> |
   <%= link_to 'Back', books_path %>

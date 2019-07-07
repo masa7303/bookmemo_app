@@ -1,0 +1,6 @@
+ja:
+    activerecord:
+        errors:
+            messages:
+                invalid_image_type: にはJPEG,PNG,GIF,PNG形式の画像を指定してください
+                remove_picture: 画像を削除

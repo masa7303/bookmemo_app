@@ -32,7 +32,6 @@ class BooksController < ApplicationController
         format.json { render :show, status: :created, location: @book }
       else
         format.html { render :new }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +68,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :picture)
+      params.require(:book).permit(:title, :author, :picture, :new_picture, :remove_picture)
     end
 end
