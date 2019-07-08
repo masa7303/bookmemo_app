@@ -1,18 +1,17 @@
 <div class="text-center">
   <p id="notice"><%= notice %></p>
 
-  <p>
+  <h1>
     <%= @book.title %>
-  </p>
+  </h1>
 
   <p>
-    <strong>著者:</strong>
     <%= @book.author %>
   </p>
 
   <p>
   <% if @book.picture.attached? %>
-    <%= image_tag @book.picture.variant(resize: "128x128") %>
+    <%= image_tag @book.picture.variant(resize: "500x500") %>
   <% end %>
   </P>
 
