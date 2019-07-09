@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :contacts, :only => [:new, :create]
+  #get 'contacts/new'
+  #get 'contacts/create'
   resources :books do
     resources :comments, :only => [:create, :destroy]
   end
