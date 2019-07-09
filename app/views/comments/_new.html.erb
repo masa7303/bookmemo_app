@@ -1,0 +1,6 @@
+<%= form_with(model: [ @book, Comment.new ], remote: true) do |form| %>
+    Your Comment:<br>
+    <%= form.text_area :body, size: '50x8' %><br>
+    <%= form.date_select :posted_at %>
+    <%= form.submit %>
+<% end %>

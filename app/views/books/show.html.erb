@@ -15,6 +15,15 @@
   <% end %>
   </P>
 
+  <% if @comments.present? %>
+    <h2>Comments</h2>
+    <div id="comments">
+      <%= render @book.comments %>
+    </div>
+  <% end %>
+
+  <%= render 'comments/new', post: @post %>
+
   <%= link_to 'Edit', edit_book_path(@book) %> |
   <%= link_to 'Back', books_path %>
 </div>
