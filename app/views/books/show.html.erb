@@ -20,7 +20,9 @@
   <% if @comments.present? %>
     <h2>Comments</h2>
     <div id="comments">
-      <%= render @book.comments %>
+      <table class="table table-striped">
+        <%= render @book.comments %>
+      </table>
     </div>
   <% end %>
 
