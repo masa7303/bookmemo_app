@@ -1,3 +1,7 @@
-  <td class='col-xs-2 text-right'><%= comment.posted_at.strftime("%Y/%m/%d") %></td>
-  <td class='col-xs-8 text-left'><%= comment.body %></td>
-  <td class='col-xs-2'><%= link_to "delete", "#{comment.book_id}/comments/#{comment.id}",method: :delete %></td>
+<div class="row">
+  <tr>
+    <td class='text-right'><%= comment.posted_at.strftime("%Y/%m/%d") %></td>
+    <td class='text-left'><%= comment.body %></td>
+    <td><%= link_to "delete", "#{comment.book_id}/comments/#{comment.id}",method: :delete %></td>
+  </tr>
+</div>
