@@ -2,7 +2,8 @@
   <% if @comments1.present? %>
     <h2 class="bg-secondary text-white d-block py-2">今日</h2>
     <% @comments1.each do |comment| %>
-      <p><%= comment.body %></p>
+      <div class="comment-content"><%= comment.body %></div>
+      <p class="source">(<%= @book.title %>)</p>
     <% end %>
   <% end %>
 

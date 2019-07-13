@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   protect_from_forgery
-  before_action :set_post, except: [:index]
+  before_action :set_post
 
   def new
     @comment = Comment.new(posted_at: Time.current)
@@ -36,6 +36,6 @@ class CommentsController < ApplicationController
       end
 
       def comments_params
-        params.required(:comment).permit(:body, :posted_at)
+        params.required(:comment).permit(:body, :posted_at, :book_id)
       end
 end
