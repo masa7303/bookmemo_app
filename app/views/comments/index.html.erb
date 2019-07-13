@@ -1,0 +1,36 @@
+<div class="container text-center">
+  <% if @comments1.present? %>
+    <h2 class="bg-secondary text-white d-block py-2">今日</h2>
+    <% @comments1.each do |comment| %>
+      <p><%= comment.body %></p>
+    <% end %>
+  <% end %>
+
+  <% if @comments2.present? %>
+    <h2 class="bg-secondary text-white d-block py-2">１日前</h2>
+    <% @comments.each do |comment| %>
+      <p><%= comment.body %></p>
+    <% end %>
+  <% end %>
+
+  <% if @comments3.present? %>
+    <h2 class="bg-secondary text-white d-block py-2">３日前</h2>
+    <% @comments.each do |comment| %>
+      <p><%= comment.body %></p>
+    <% end %>
+  <% end %>
+
+  <% if @comments4.present? %>
+    <h2 class="bg-secondary text-white d-block py-2">１週間前</h2>
+    <% @comments.each do |comment| %>
+      <p><%= comment.body %></p>
+    <% end %>
+  <% end %>
+
+  <% if @comments5.present? %>
+    <h2 class="bg-secondary text-white d-block py-2">１ヶ月前</h2>
+    <% @comments.each do |comment| %>
+      <p><%= comment.body %></p>
+    <% end %>
+  <% end %>
+</div>

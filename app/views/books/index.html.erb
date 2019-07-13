@@ -13,7 +13,7 @@
         <div class="card text-center shadow-lg">
           <div>
             <% if book.picture.attached? %>
-              <%= link_to image_tag(book.picture, class: "card-img-top"), book %></a>
+              <%= link_to image_tag(book.picture, class: "card-img-top"), book %>
             <% else %>
               <%= link_to image_tag('noimage.png', class: "card-img-top"), book %>
             <% end %>
