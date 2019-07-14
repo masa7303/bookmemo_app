@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   protect_from_forgery
-  before_action :set_post
+  before_action :set_post, except: [:index]
 
   def new
     @comment = Comment.new(posted_at: Time.current)
@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 
   def create
     @book.comments.create!(comments_params)
-    redirect_to @book
+    redirect_to @book, notice: 'コメントの作成に成功しました'
   end
 
   def destroy
