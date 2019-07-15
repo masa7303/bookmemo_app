@@ -35,3 +35,7 @@ gem 'rails-i18n', '~> 5.1'
 gem "jquery-rails"
 gem 'mini_magick', '~> 4.8'
 gem 'dotenv-rails'
+gem 'devise'
+gem 'activeadmin'
+gem 'sqlite3', '1.3.13'
+gem 'bootstrap-sass', '~> 3.3.6'

@@ -7,8 +7,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @book.comments.create!(comments_params)
-    redirect_to @book, notice: 'コメントの作成に成功しました'
+    @book.comments.build(comments_params)
+    @comment.book_title = @book.id
+    if @comment.save
+      redirect_to @book, notice: 'コメントの作成に成功しました'
+    end
   end
 
   def destroy

@@ -25,4 +25,16 @@ class Book < ApplicationRecord
       self.picture.purge
     end
   end
+
+  scope :get_by_title, ->(title) {where("title like ?", "%#{title}%")
+}
+
+  def self.search(search)
+    if search
+      Book.where(['content LIKE ?', "%#{search}%"])
+    else
+      Book.all
+    end
+  end
+
 end
