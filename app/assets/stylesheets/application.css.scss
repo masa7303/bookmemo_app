@@ -44,3 +44,12 @@
 .search-box {
   margin-bottom: 10px;
 }
+
+.card-img-top {
+    background-color: #000;
+    overflow: hidden;
+}
+
+.card-img-top:hover {
+  opacity: 0.3;
+}

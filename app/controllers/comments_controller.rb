@@ -1,17 +1,14 @@
 class CommentsController < ApplicationController
   protect_from_forgery
-  before_action :set_post, except: [:index]
+  before_action :set_post
 
   def new
     @comment = Comment.new(posted_at: Time.current)
   end
 
   def create
-    @book.comments.build(comments_params)
-    @comment.book_title = @book.id
-    if @comment.save
-      redirect_to @book, notice: 'コメントの作成に成功しました'
-    end
+    @book.comments.create!(comments_params)
+    redirect_to @book
   end
 
   def destroy
