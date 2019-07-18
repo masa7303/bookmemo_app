@@ -1,13 +1,16 @@
 class CommentsController < ApplicationController
   protect_from_forgery
-  before_action :set_post
+  before_action :set_post, except: [:index]
 
   def new
-    @comment = Comment.new(posted_at: Time.current)
+    @comment = Comment.new(posted_at: Time.current, book_title: @book[:title])
   end
 
   def create
-    @book.comments.create!(comments_params)
+    @comment = @book.comments.build(comments_params)
+    @comment.book_title = @book.title
+    @comment.save
+    #@book.comments.create!(comments_params).merge(:book_title => "#{@book.title}"))
     redirect_to @book
   end
 
@@ -36,6 +39,6 @@ class CommentsController < ApplicationController
       end
 
       def comments_params
-        params.required(:comment).permit(:body, :posted_at, :book_id)
+        params.required(:comment).permit(:body, :posted_at, :book_id, :book_title)
       end
 end
