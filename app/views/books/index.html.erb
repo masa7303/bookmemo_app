@@ -9,7 +9,7 @@
 
   <div class="text-right search-box">
     <%= form_tag(books_path,:method => 'get') do %>
-      <%= text_field_tag :title, params[:title] %>
+      <%= text_field_tag :title, params[:title], placeholder: "本のタイトルを入力" %>
       <%= submit_tag 'Search', :name => nil %>
     <% end %>
   </div>
