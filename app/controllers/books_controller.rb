@@ -1,18 +1,21 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :current_user, only: [:new, :create]
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.page(params[:page]).per(6)
+    @user = User.find(session[:user_id])
+    @books = Book.order(posted_at: :desc).page(params[:page]).per(6)
     if params[:title].present?
-      @books = @books.get_by_title params[:title]
+      @books = @books.get_by_title(params[:title])
     end
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @user = User.find(session[:user_id])
     @comments = @book.comments
     @comment = Comment.new
   end
@@ -29,15 +32,13 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
+    @user = User.find(session[:user_id])
     @book = Book.new(book_params)
-
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render :show, status: :created, location: @book }
-      else
-        format.html { render :new }
-      end
+    @book.user_id = @user.id
+    if @book.save
+      redirect_to @book
+    else
+      render "new"
     end
   end
 
@@ -77,6 +78,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :picture, :new_picture, :remove_picture)
+      params.require(:book).permit(:title, :author, :picture, :new_picture, :remove_picture, :user_id)
     end
 end

@@ -13,9 +13,11 @@
        <li class="nav-item">
          <%= link_to "CONTACT", new_contact_path, class: "nav-link" %><span class="sr-only">(current)</span>
        </li>
-       <li class="nav-item">
-         <%= link_to "BOOKS", books_path, class: "nav-link" %><span class="sr-only">(current)</span>
-       </li>
+       <% if logged_in? %>
+         <li class="nav-item">
+           <%= link_to "BOOKS", user_books_path(session[:user_id]), class: "nav-link" %><span class="sr-only">(current)</span>
+         </li>
+       <% end %>
        <li class="nav-item">
          <%= link_to "COMMENTS", comments_index_path, class: "nav-link" %><span class="sr-only">(current)</span>
        </li>
@@ -26,13 +28,10 @@
            <%= link_to "Sign in with Twitter", '/auth/twitter', class: "nav-link" %><span class="sr-only">(current)</span>
          <% end %>
        </li>
-       <li class="nav-item dropdown">
-         <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-         <div class="dropdown-menu" aria-labelledby="dropdown10">
-           <a class="dropdown-item" href="#">Action</a>
-           <a class="dropdown-item" href="#">Another action</a>
-           <a class="dropdown-item" href="#">Something else here</a>
-         </div>
+       <li>
+         <% if session[:name] %>
+           <p><%= "#{session[:name]}さん、こんにちは" %></p>
+         <% end %>
        </li>
      </ul>
    </div>

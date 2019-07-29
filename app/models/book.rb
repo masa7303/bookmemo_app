@@ -6,6 +6,8 @@ class Book < ApplicationRecord
   # book が削除されると、同時にコメントも消される
   has_many :comments, dependent: :destroy
 
+  belongs_to :user, class_name: 'User', foreign_key: 'user_id'
+
   # new_pictureが nil でも false でも無い場合に限りバリデーションを行う
   validate  if: :new_picture do
     # respond_to はあるオブジェクトが特定のメソッドを持っているかどうかを調べる
@@ -26,8 +28,7 @@ class Book < ApplicationRecord
     end
   end
 
-  scope :get_by_title, ->(title) {where("title like ?", "%#{title}%")
-}
+  scope :get_by_title, ->(title) {where("title like ?", "%#{title}%")}
 
   def self.search(search)
     if search
