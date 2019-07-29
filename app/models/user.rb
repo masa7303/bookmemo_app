@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :books, dependent: :destroy
+  
+  acts_as_liker
 
   def self.find_or_create_from_auth_hash(auth_hash)
     provider = auth_hash[:provider] #providerはどのサービスで認証したのかを見分けるもの

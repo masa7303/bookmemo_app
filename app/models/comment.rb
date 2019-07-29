@@ -3,6 +3,8 @@ class Comment < ApplicationRecord
 
   validates :body, presence: true
 
+  acts_as_likeable
+
   # 今日投稿された Comment を取得
   scope :created_today, -> { where("created_at >= ?", Time.zone.now.beginning_of_day) }
 
