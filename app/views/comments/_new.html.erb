@@ -1,6 +1,6 @@
 <%= form_with(model: [ @book, Comment.new ], local: true) do |form| %>
     Your Comment:<br>
     <%= form.text_area :body, size: '50x8' %><br>
-    <%= form.date_select :posted_at %>
+    <%= form.date_select :posted_at, {:use_month_numbers => true } %>
     <%= form.submit %>
 <% end %>

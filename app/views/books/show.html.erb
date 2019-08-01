@@ -17,6 +17,14 @@
   <% end %>
   </P>
 
+  <p>
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button"
+       data-text="【BOOKMEMO】この本オススメ！&#13;&#10;&#13;&#10;<%= @book.title %> ( <%= @book.author %> )&#13;&#10;"
+       data-hashtags="オススメの本&#13;&#10;"
+       data-show-count="false">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </p>
+
   <% if @comments.present? %>
     <h2>Comments</h2>
     <div id="comments">

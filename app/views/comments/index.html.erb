@@ -10,28 +10,36 @@
   <% if @comments2.present? %>
     <h2 class="bg-secondary text-white d-block py-2">１日前</h2>
     <% @comments.each do |comment| %>
-      <p><%= comment.body %></p>
+      <div class="comment-content"><%= comment.body %></div>
+      <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
   <% end %>
 
   <% if @comments3.present? %>
     <h2 class="bg-secondary text-white d-block py-2">３日前</h2>
     <% @comments.each do |comment| %>
-      <p><%= comment.body %></p>
+      <div class="comment-content"><%= comment.body %></div>
+      <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
   <% end %>
 
   <% if @comments4.present? %>
     <h2 class="bg-secondary text-white d-block py-2">１週間前</h2>
     <% @comments.each do |comment| %>
-      <p><%= comment.body %></p>
+      <div class="comment-content"><%= comment.body %></div>
+      <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
   <% end %>
 
   <% if @comments5.present? %>
     <h2 class="bg-secondary text-white d-block py-2">１ヶ月前</h2>
     <% @comments.each do |comment| %>
-      <p><%= comment.body %></p>
+      <div class="comment-content"><%= comment.body %></div>
+      <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
+  <% end %>
+
+  <% if @favoritecomments.blank? %>
+    <p>コメントはありません</p>
   <% end %>
 </div>

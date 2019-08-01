@@ -47,9 +47,9 @@ gem 'activeadmin'
 gem 'sqlite3', groups: %w(test development), require: false
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
-gem 'bootstrap-sass'
 gem 'faker'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem "socialization"
+gem 'font-awesome-rails'

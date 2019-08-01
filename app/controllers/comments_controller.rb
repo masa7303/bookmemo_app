@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @book.comments.destroy(params[:id])
+    Comment.destroy(params[:id])
     redirect_to @book
   end
 
@@ -31,6 +31,8 @@ class CommentsController < ApplicationController
     @comments4 = @comments.created_a_week_ago.order(posted_at: :desc)
     # 一ヶ月前に書いた記録
     @comments5 = @comments.created_a_month_ago.order(posted_at: :desc)
+
+    @favoritecomments = @comments1 + @comments2 + @comments3 + @comments4 + @comments5
   end
 
     private
