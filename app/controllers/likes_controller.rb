@@ -3,11 +3,15 @@ class LikesController < ActionController::API
   before_action :set_comment
 
   def like
-      if @current_user.likes?(@comment)
-        render json: !@current_user.unlike!(@comment)
-      else
-        render json: @current_user.like!(@comment)
-      end
+    if @current_user.likes?(@comment)
+      render json: !@current_user.unlike!(@comment)
+    else
+      render json: @current_user.like!(@comment)
+    end
+  end
+
+  def likes?
+    render json: @current_user.likes?(@comment)
   end
 
   private

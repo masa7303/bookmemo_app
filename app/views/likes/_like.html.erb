@@ -2,23 +2,27 @@
 
 <script type="text/javascript">
   $(function(){
+    $("#<%= comment.id %>")
+      $ajax({
+      url: "/likes/likes?",
+      type: 'POST',
+
+      })
+  })
+
+  $(function(){
     $("#<%= comment.id %>").on('click',function(){
-      console.log("test")
       $.ajax({
       url: "/likes/<%= comment.id %>",
       type:'POST',
       success: function(data){
-        console.log("test")
         if($("#<%= comment.id %>").hasClass('unlike')){
-          console.log("test")
           $("#<%= comment.id %>").removeClass('fa-heart-o unlike');
           $("#<%= comment.id %>").addClass('fa-heart like');
         }else{
-          console.log("test")
           $("#<%= comment.id %>").removeClass('fa-heart like');
           $("#<%= comment.id %>").addClass('fa-heart-o unlike');
         }
-        console.log("test")
       }
     });
   });
