@@ -15,24 +15,28 @@
   </div>
 
   <div class="row">
-    <% @books.each do |book| %>
-      <div class="col-md-4">
-        <div class="card text-center shadow-lg">
-          <div>
-            <% if book.picture.attached? %>
-              <%= link_to image_tag(book.picture, class: "card-img-top"), book %>
-            <% else %>
-              <%= link_to image_tag('noimage.png', class: "card-img-top"), book %>
-            <% end %>
+    <% if @books.present? %>
+      <% @books.each do |book| %>
+        <div class="col-md-4">
+          <div class="card text-center shadow-lg">
+            <div>
+              <% if book.picture.attached? %>
+                <%= link_to image_tag(book.picture, class: "card-img-top"), book %>
+              <% else %>
+                <%= link_to image_tag('noimage.png', class: "card-img-top"), book %>
+              <% end %>
+            </div>
+            <h1 class="card-title"><%= book.title %></h1>
+            <p class="card-text"><%= book.author %></p>
+            <p>
+              <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
+              <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+            </p>
           </div>
-          <h1 class="card-title"><%= book.title %></h1>
-          <p class="card-text"><%= book.author %></p>
-          <p>
-            <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
-            <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-          </p>
         </div>
-      </div>
+      <% end %>
+    <% else %>
+      <p>本が登録されていません。</p>
     <% end %>
   </div>
 
