@@ -2,26 +2,32 @@
 
 <script type="text/javascript">
   $(function(){
-    $("#<%= comment.id %>")
-      $ajax({
-      url: "/likes/likes?",
-      type: 'POST',
-
-      })
+    $.ajax({
+    url: "/likes/<%= comment.id %>",
+    type:'POST',
+    success: function(data){
+      console.log(data)
+      if (data){
+        $("#<%= comment.id %>").removeClass('fa fa-heart-o unlike');
+        $("#<%= comment.id %>").addClass('fa fa-heart like');
+      }
+    }
+    });
   })
 
   $(function(){
     $("#<%= comment.id %>").on('click',function(){
       $.ajax({
-      url: "/likes/<%= comment.id %>",
+      url: "/likes/<%= comment.id %>/like",
       type:'POST',
       success: function(data){
-        if($("#<%= comment.id %>").hasClass('unlike')){
-          $("#<%= comment.id %>").removeClass('fa-heart-o unlike');
-          $("#<%= comment.id %>").addClass('fa-heart like');
+        console.log(data)
+        if($("#<%= comment.id %>").hasClass('unlike') && data){
+          $("#<%= comment.id %>").removeClass('fa fa-heart-o unlike');
+          $("#<%= comment.id %>").addClass('fa fa-heart like');
         }else{
-          $("#<%= comment.id %>").removeClass('fa-heart like');
-          $("#<%= comment.id %>").addClass('fa-heart-o unlike');
+          $("#<%= comment.id %>").removeClass('fa fa-heart like');
+          $("#<%= comment.id %>").addClass('fa fa-heart-o unlike');
         }
       }
     });

@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
-  post '/likes/:id' => 'likes#like'
+  post '/likes/:id' => 'likes#likes?'
+  post '/likes/:id/like' => 'likes#like'
 end
