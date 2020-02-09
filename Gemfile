@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 gem 'rails', '~> 5.2.3'
-gem 'mysql2', groups: %w(production), require: false
+gem 'sqlite3', groups: %w(production), require: false
 gem 'puma', '~> 3.11'
 #gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -33,7 +33,7 @@ group :test do
 end
 
 group :production do
-  gem 'mysql2'
+  gem 'sqlite3'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -44,7 +44,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'dotenv-rails'
 gem 'devise'
 gem 'activeadmin'
-gem 'mysql2', groups: %w(test development), require: false
+gem 'sqlite3', groups: %w(test development), require: false
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'faker'
