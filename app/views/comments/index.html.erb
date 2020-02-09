@@ -1,3 +1,11 @@
+<div class="header_box">
+  <%= image_tag "book_shelf.jpg", class: "header_bg_img", alt: "" %>
+  <div class="header_ttl text-center">
+    <h1 class="header_ttl_ja">文章</h1>
+    <p class="header_ttl_en">SENTENCES</p>
+  </div>
+</div>
+
 <div class="container text-center">
   <% if @comments1.present? %>
     <h2 class="bg-secondary text-white d-block py-2">今日</h2>
@@ -40,6 +48,6 @@
   <% end %>
 
   <% if @favoritecomments.blank? %>
-    <p>コメントはありません</p>
+    <p>現在、リマインドする文章はありません</p>
   <% end %>
 </div>

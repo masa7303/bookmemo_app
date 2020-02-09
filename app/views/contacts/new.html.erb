@@ -1,3 +1,11 @@
+<div class="header_box">
+  <%= image_tag "book_shelf.jpg", class: "header_bg_img", alt: "" %>
+  <div class="header_ttl text-center">
+    <h1 class="header_ttl_ja">お問い合わせ</h1>
+    <p class="header_ttl_en">CONTACT</p>
+  </div>
+</div>
+
 <div class="container">
   <%= form_for @contact do |f| %>
 
@@ -11,8 +19,8 @@
      <%= f.text_area :message, size: '10x10', class: 'form-control col-sm-5' %>
    </div>
 
-   <div class="row">
-   <%= f.submit '送信', class: 'btn btn-primary mx-auto mb-sm-3 d-block' %>
+   <div class="row contact_submit_btn">
+     <%= f.submit '送信', class: 'btn-flat-border mx-auto d-block' %>
    </div>
 
   <% end %>

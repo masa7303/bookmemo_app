@@ -12,17 +12,106 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
 @import "bootstrap";
+@import 'font-awesome-sprockets';
 @import "font-awesome";
+
+a:hover {
+  text-decoration: none;
+}
+// 下層ページヘッダー
+.header_bg_img {
+  width: 100%;
+  height: auto;
+}
+
+.header_box {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.header_ttl {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.header_ttl_ja {
+  letter-spacing: 0.3rem;
+}
+@media screen and (max-width: 768px) {
+  .header_ttl_ja {
+    font-size: 1.4rem;
+  }
+}
+
+.header_ttl_en {
+  letter-spacing: 0.1rem;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 768px) {
+  .header_ttl_en {
+    font-size: 0.2rem;
+  }
+}
+
+.site_logo {
+  margin-right: 40px;
+}
+@media screen and (max-width: 768px) {
+  .site_logo {
+    margin-right: 0;
+
+  }
+}
 
 .nav-menu {
   margin-right: 200px;
+  text-align: center;
+}
+
+.nav-item {
+  margin-right: 20px;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-item::after {
+  position: absolute;
+  content: '';
+  bottom: -5;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #333;
+  transition: all 0.3s ease 0s;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item i {
+  font-size: 2rem;
+  color: #333;
+}
+
+.nav-link {
+  line-height: 1rem;
+  padding: 0;
 }
 
 .card {
-  max-width: 25rem;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
@@ -54,6 +143,42 @@
 
 .card-img-top:hover {
   opacity: 0.3;
+}
+
+// フッター
+.footer_nav-link {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.footer_nav-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer_nav-link {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.footer_nav-link::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: all 0.3s ease 0s;
+}
+
+.footer_nav-link:hover {
+  cursor: pointer;
+}
+
+.footer_nav-link:hover::after {
+  width: 100%;
 }
 
 .footer-text {

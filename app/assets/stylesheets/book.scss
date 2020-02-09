@@ -1,0 +1,84 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.no_book_txt {
+  font-size: 1.4rem;
+  margin: 0 auto;
+}
+
+.new_book_table {
+  width: 60%!important;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+.new_book_table th,
+.new_book_table td {
+  height: 50px;
+  vertical-align: middle!important;
+  border: 0px!important;
+}
+@media screen and (max-width: 768px) {
+  .new_book_table th,
+  .new_book_table td {
+    display: block;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .new_book_table tr {
+    height: 100px;
+  }
+}
+
+.new_book_table th {
+  text-align: right;
+}
+@media screen and (max-width: 768px) {
+  .new_book_table th {
+    text-align: center;
+  }
+}
+
+.new_book_table input {
+  width: 80%;
+}
+@media screen and (max-width: 768px) {
+  .new_book_table input {
+    width: 100%;
+  }
+  #book_title,
+  #book_author,
+   {
+    border: 1px solid #a9a9a9;
+  }
+}
+
+.btn-flat-border {
+  display: inline-block;
+  font-size: 1.4rem;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.back_link {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .book_thumbnail {
+    width: 70%;
+  }
+}

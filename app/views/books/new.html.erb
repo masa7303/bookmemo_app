@@ -1,4 +1,10 @@
-<h1 class="text-center">New Book</h1>
+<div class="header_box">
+  <%= image_tag "book_shelf.jpg", class: "header_bg_img", alt: "" %>
+  <div class="header_ttl text-center">
+    <h1 class="header_ttl_ja">新しい本を登録</h1>
+    <p class="header_ttl_en">NEW BOOK</p>
+  </div>
+</div>
 
 <div class="text-center">
   <%= render 'form', book: @book %>

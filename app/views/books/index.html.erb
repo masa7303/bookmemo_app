@@ -1,11 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<section class="jumbotron text-center about-top">
-</section>
+<div class="header_box">
+  <%= image_tag "book_shelf.jpg", class: "header_bg_img", alt: "" %>
+  <div class="header_ttl text-center">
+    <h1 class="header_ttl_ja">本棚</h1>
+    <p class="header_ttl_en">BOOKS</p>
+  </div>
+</div>
 
 <div class="container">
-  <h1 class="text-center">Books</h1>
-  <p class="text-center"><%= link_to '新規登録', new_book_path, class: "btn btn-outline-primary" %></p>
+  <p class="text-center">
+    <%= link_to '新規登録', new_book_path, class: "btn-flat-border" %>
+  </p>
 
   <div class="text-right search-box">
     <%= form_tag(books_path,:method => 'get') do %>
@@ -36,7 +42,7 @@
         </div>
       <% end %>
     <% else %>
-      <p class="text-center">本が登録されていません。</p>
+      <p class="no_book_txt">本が登録されていません。</p>
     <% end %>
   </div>
 

@@ -1,25 +1,25 @@
 <%= render "shared/errors", obj: @book %>
 
 <%= form_with(model: book, local: true) do |form| %>
-  <table class="table container">
+  <table class="table container new_book_table">
 
     <div class="field">
       <tr>
-        <th><%= form.label :title %></th>
+        <th><%= form.label :タイトル %></th>
         <td><%= form.text_field :title %></td>
       </tr>
     </div>
 
     <div class="field">
       <tr>
-        <th><%= form.label :author %></th>
+        <th><%= form.label :著者 %></th>
         <td><%= form.text_field :author %></td>
       </tr>
     </div>
 
     <div class="field">
       <tr>
-        <th><%= form.label :new_picture %></th>
+        <th><%= form.label :写真 %></th>
         <td>
           <div><%= form.file_field :new_picture %></div>
           <% if @book.picture.attached? %>
@@ -35,8 +35,10 @@
   </table>
 
     <div class="actions">
-        <%= form.submit class: "btn btn-primary" %>
+        <%= form.submit class: "btn-flat-border" %>
     </div>
   <% end %>
 
-<%= link_to 'Back', books_path %>
+<div class="back_link">
+  <%= link_to '戻る', books_path %>
+</div>

@@ -1,5 +1,6 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -10,11 +11,22 @@
 
   <body>
     <div id="home">
-      <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <main role="main" class="inner cover">
-           <h1 class="cover-heading">BOOK  MEMO</h1>
-           <p class="top-text">読んだ本の内容を忘れないために</p>
-         </main>
+      <div class="top_ttl text-center">
+        <h1>BOOK  MEMO</h1>
+        <p class="top-text">いつでも隣にあなただけの本棚を</p>
+        <ul class="top_list">
+          <li>好きな本を登録</li>
+          <li>文章をリマインド</li>
+          <li>人とつながる</li>
+        </ul>
+        <%= link_to "詳細はこちらから", about_index_path, class: "top_about_link" %>
+        <% if logged_in? %>
+        <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <i class="fas fa-arrow-up d-block login_icon_txt"></i>
+        <p>LOGIN</p>
+        <% end %>
       </div>
     </div>
   </body>

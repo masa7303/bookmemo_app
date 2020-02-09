@@ -9,19 +9,61 @@
   height: 500px;
 }
 
+h1.about_ttl_ja {
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+@media screen and (max-width: 768px) {
+  h1.about_ttl_ja {
+    font-size: 1.5rem;
+  }
+}
+
+.about_ttl_en {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .about_ttl_en {
+    font-size: 0.5rem;
+  }
+}
+
+h1.about_ttl_ja:before,
+h1.about_ttl_ja:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+h1.about_ttl_ja:before {
+  left:0;
+}
+h1.about_ttl_ja:after {
+  right: 0;
+}
+
 .about-text {
   color: white;
   margin-top: 10%;
   font-size: 2rem !important;
 }
 
-.under_bar {
-	border: solid 1px black;
-	width: 30px;
-	margin: 0 auto;
-}
-
 .about-caption {
   margin-top: 10%;
   margin-bottom: 30%;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .about-caption {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
 }

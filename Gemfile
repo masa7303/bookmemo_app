@@ -52,4 +52,4 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
 gem "socialization"
-gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.12.0'

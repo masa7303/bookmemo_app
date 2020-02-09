@@ -11,9 +11,9 @@
 
   <p>
   <% if @book.picture.attached? %>
-    <%= image_tag @book.picture.variant(resize: "500x500") %>
+    <%= image_tag @book.picture.variant(resize: "500x500"), class: 'book_thumbnail' %>
   <% else %>
-    <%= image_tag 'noimage.png', class: 'thumbnail' %>
+    <%= image_tag 'noimage.png', class: 'thumbnail book_thumbnail' %>
   <% end %>
   </P>
 

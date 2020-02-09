@@ -2,19 +2,21 @@
   <div class="container text-center">
     <ul class="nav justify-content-center mb-3">
       <li class="nev-item">
-        <a class="nav-link footer-text" href="#">TOP</a>
+        <a class="footer_nav-link footer-text" href="/">TOP</a>
       </li>
       <li class="nev-item">
-        <a class="nav-link footer-text" href="#">ABOUT</a>
+        <%= link_to "ABOUT", about_index_path, class: "footer_nav-link" %><span class="sr-only">(current)</span>
       </li>
+      <% if logged_in? %>
+        <li class="nev-item">
+          <%= link_to "BOOKS", user_books_path(session[:user_id]), class: "footer_nav-link" %><span class="sr-only">(current)</span>
+        </li>
+        <li class="nev-item">
+          <%= link_to "SENTENCE", comments_index_path, class: "footer_nav-link" %><span class="sr-only">(current)</span>
+        </li>
+      <% end %>
       <li class="nev-item">
-        <a class="nav-link footer-text" href="#">BOOKS</a>
-      </li>
-      <li class="nev-item">
-        <a class="nav-link footer-text" href="#">COMMENTS</a>
-      </li>
-      <li class="nev-item">
-        <a class="nav-link footer-text" href="#">CONTACT</a>
+        <%= link_to "CONTACT", new_contact_path, class: "footer_nav-link" %><span class="sr-only">(current)</span>
       </li>
     </ul>
     <p><small>Copyright &copy;2019 BOOKMEMO, All Rights Reserved.</small></p>

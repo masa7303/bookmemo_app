@@ -1,25 +1,60 @@
-<section class="jumbotron text-center about-top">
-  <div class="container">
-    <p class="lead about-text">本の学びを忘れないように・・・</p>
+<div class="header_box">
+  <%= image_tag "book_shelf.jpg", class: "header_bg_img", alt: "" %>
+  <div class="header_ttl text-center">
+    <h1 class="header_ttl_ja">BOOKMEMOについて</h1>
+    <p class="header_ttl_en">ABOUT</p>
   </div>
-</section>
+</div>
 
 <div class="container marketing text-center">
-  <div class="row">
-      <div class="col-lg-4">
-        <h2>本を登録</h2>
-        <div class="under_bar"></div>
-        <p class="about-caption">あなたは今まで読んだ本を覚えていますか？BOOKMEMO はあなたが読んだ本を写真付きで登録することができます。せっかく読んだ本は記録して、自分だけのお気に入りの本棚を作りましょう。</p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <h2>文章をリマインド</h2>
-        <div class="under_bar"></div>
-        <p class="about-caption">本を読んでいると「忘れたくない文章」に出会うことがあります。BOOKMEMO は本ごとに文章を記録することができるとともに、記録した文章を定期的（１日後、３日後、１週間後、１ヶ月後）にリマインドします。</p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <h2>人とつながる</h2>
-        <div class="under_bar"></div>
-        <p class="about-caption">「あの人はどのような本を読んでいるんだろう？」と思う時はありませんか？BOOKMEMO の本棚は連携したTwitterアカウントで公開できるため、同じような感性を持つ人と本棚を共有することができます。</p>
-      </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
+  <div class="">
+    <h1 class="about_ttl_ja">読んだ本を記録</h1>
+    <p class="about_ttl_en">RECORD</p>
+    <div class="row">
+      <div class="img_box col-lg-6">
+        <%= image_tag "aikon.png", size: "170x30", alt: "" %>
+      </div>
+      <div class="txt_box col-lg-6">
+        <p class="about-caption">
+          あなたは今まで読んだ本の種類や内容を覚えていますか？
+          「BOOKMEMO」はあなたが読んだ本を写真付きで登録することができます。
+          せっかく読んだ本は記録し、自分だけのお気に入りの本だけを集めた本棚を作りましょう！
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <p class="about_ttl_en">REMIND</p>
+    <h1 class="about_ttl_ja">お気に入りの文章をリマインド</h1>
+    <div class="row">
+      <div class="img_box col-lg-6">
+        <%= image_tag "aikon.png", size: "170x30", alt: "" %>
+      </div>
+      <div class="txt_box col-lg-6">
+        <p class="about-caption">
+          本を読んでいると度々「忘れたくない文章」に出会うことがあります。
+          「BOOKMEMO」は登録した本それぞれに文章を記録することができるとともに、
+          記録した文章を定期的（１日後、３日後、１週間後、１ヶ月後）にリマインドします。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <p class="about_ttl_en">CONNECT</p>
+    <h1 class="about_ttl_ja">人とつながる</h1>
+    <div class="row">
+      <div class="img_box col-lg-6">
+        <%= image_tag "aikon.png", size: "170x30", alt: "" %>
+      </div>
+      <div class="txt_box col-lg-6">
+        <p class="about-caption">
+          「BOOKMEMO」はTwitterアカウントと連携することで、登録した本をツイートして発信
+          することができます。
+          自分の好きな本や、人の好きな本をどんどん共有しましょう！
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
