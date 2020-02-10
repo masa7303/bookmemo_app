@@ -81,7 +81,6 @@ test:
 production:
   <<: *default
   adapter: mysql2
-  encoding: UTF8
   pool: 5
   database: bookmemo_app_production
   username: bookmemo_app
