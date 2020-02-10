@@ -15,7 +15,7 @@
 # gem 'pg'
 #
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
@@ -80,7 +80,7 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
+  adapter: mysql2
   encoding: unicode
   pool: 5
   database: bookmemo_app_production
