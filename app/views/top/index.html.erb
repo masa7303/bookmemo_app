@@ -1,37 +1,3 @@
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <header>
-    <%= render "shared/header" %>
-  </header>
-
-  <body>
-    <div id="home">
-      <div class="top_ttl text-center">
-        <h1>BOOK  MEMO</h1>
-        <p class="top-text">いつでも隣にあなただけの本棚を</p>
-        <ul class="top_list">
-          <li>好きな本を登録</li>
-          <li>文章をリマインド</li>
-          <li>人とつながる</li>
-        </ul>
-        <%= link_to "詳細はこちらから", about_index_path, class: "top_about_link" %>
-        <% if logged_in? %>
-        <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <i class="fas fa-arrow-up d-block login_icon_txt"></i>
-        <p>LOGIN</p>
-        <% end %>
-      </div>
-    </div>
-  </body>
-
-  <footer>
-    <%= render "shared/footer" %>
-  </footer>
+  <p>これはテストです。</p>
 </html>
