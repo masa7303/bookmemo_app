@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "5c:05:f9:ec:4d:e0:a9:df:a4:e1:40:0e:a1:c1:18:f0"
+      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
