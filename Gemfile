@@ -29,6 +29,10 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production, :staging do
+  gem 'unicorn'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.2.1'
 gem 'rails-i18n', '~> 5.1'
@@ -45,3 +49,4 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem "socialization"
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'mini_racer'
