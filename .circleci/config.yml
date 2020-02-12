@@ -6,7 +6,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "65:63:21:f1:cd:b0:f8:44:4a:4f:13:6d:71:9b:28:26"
+            - "fb:67:61:1b:87:56:46:a9:fd:aa:dc:77:fa:72:9d:0e"
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST
 
 workflows:
