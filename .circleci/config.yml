@@ -6,7 +6,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "46:a7:21:0e:97:f1:fb:67:f0:19:dd:2f:05:b1:b3:0d" #上記メモったハッシュを指定
+            - "fb:67:61:1b:87:56:46:a9:fd:aa:dc:77:fa:72:9d:0e" #上記メモったハッシュを指定
       - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "cd /var/www/rails/bookmemo_app && git pull"
 
 workflows:
