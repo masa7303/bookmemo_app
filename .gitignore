@@ -26,7 +26,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-.circleci
 .env
 secrets.yml
 credentials.yml.enc
