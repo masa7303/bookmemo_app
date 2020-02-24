@@ -15,6 +15,70 @@ html {
   height: 100%;
 }
 
+.top-under {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #333;
+}
+
+.top-icon-box {
+  width: 30%;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .top-icon-box {
+    width: 60%;
+  }
+}
+
+.top-icon-txt-box {
+  width: 30%;
+  color: #fff;
+  background-color: #696969;
+  padding: 10px;
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+  margin: 40px auto 60px auto;
+}
+@media screen and (max-width: 768px) {
+  .top-icon-txt-box {
+    width: 90%;
+  }
+}
+
+.top-icon-txt-box:last-of-type {
+  margin-bottom: 0;
+}
+
+.top-icon-txt-box p {
+  margin: 0;
+}
+
+.accent-font {
+  color: #ffa500;
+  font-size: 2.2rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.top-icon {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.about-ttl {
+  font-size: 5rem;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.about-login-ttl {
+	color: #fff;
+  font-size: 1.5rem;
+}
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -72,6 +136,7 @@ body {
 .top_about_link {
   color: #fff;
   display: block;
+  margin-bottom: 80px;
 }
 .top_about_link:hover {
   color: #fff;
@@ -117,7 +182,6 @@ body {
   width: 100px;
   height: 100px;
   line-height: 30px;
-  margin-top: 80px;
   padding: 5px;
   font-size: 5rem;
   border-radius: 50%;

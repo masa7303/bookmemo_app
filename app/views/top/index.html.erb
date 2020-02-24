@@ -30,7 +30,47 @@
         <% end %>
       </div>
     </div>
-    <p>test10</p>
+    <section class="top-under">
+      <h3 class="about-ttl text-center">ABOUT</h3>
+      <div class="top-icon-box">
+        <%= image_tag "/images/book.png", class: "top-icon animation", alt: "" %>
+      </div>
+      <div class="top-icon-txt-box text-center animation">
+        <p>
+          これまで読んだ<span class="accent-font">本を記録</span>しておきたいと思ったことはありませんか？<br>
+          「BOOKMEMO」は、あなたが読んだ本を<span class="accent-font">写真付き</span>で登録することができます。<br>
+          せっかく読んだ本は記録して、<span class="accent-font">自分だけの本棚</span>を作りましょう！
+        </p>
+      </div>
+      <div class="top-icon-box">
+        <%= image_tag "/images/pencil.png", class: "top-icon animation", alt: "" %>
+      </div>
+      <div class="top-icon-txt-box text-center animation">
+        <p>
+          本を読んでいると度々「忘れたくない文章」に出会うことがあると思います。<br>
+          「BOOKMEMO」は登録した本のそれぞれに、<span class="accent-font">文章を記録</span>することができます。<br>
+          また記録した文章を定期的（１日後、３日後、１週間後、１ヶ月後）に<span class="accent-font">リマインド</span>します。
+        </p>
+      </div>
+      <div class="top-icon-box">
+        <%= image_tag "/images/character.png", class: "top-icon animation", alt: "" %>
+      </div>
+      <div class="top-icon-txt-box text-center animation">
+        <p>
+          これまで読んだ<span class="accent-font">本を記録</span>しておきたいと思ったことはありませんか？<br>
+          「BOOKMEMO」は、あなたが読んだ本を<span class="accent-font">写真付き</span>で登録することができます。<br>
+          せっかく読んだ本は記録して、<span class="accent-font">自分だけの本棚</span>を作りましょう！
+        </p>
+      </div>
+      <div class="text-center animation">
+        <% if logged_in? %>
+        <p class="about-login-ttl">ログインはこちらから！</p>
+        <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <% end %>
+      </div>
+    </section>
   </body>
 
   <footer>

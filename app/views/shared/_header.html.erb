@@ -1,14 +1,65 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-dark rounded">
 
    <a class="navbar-brand" href="/">
-     <%= image_tag "/images/aikon.png", size: "170x30", alt: "", class: "site_logo" %>
-   </a>
+     <%= image_tag "/images/aikon-white.png", size: "170x40", alt: "", class: "site_logo" %>
+   </a> -->
 
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
-     <span class="navbar-toggler-icon"></span>
-   </button>
+   <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon">
+     </span>
+   </button> -->
 
-   <div class="collapse navbar-collapse justify-content-md-center nav-menu" id="navbarsExample10">
+<header class="globalHeader">
+   <div class="humburger_menu">
+     <span class="bar1"></span>
+     <span class="bar2"></span>
+     <span class="bar3"></span>
+   </div>
+   <nav>
+     <a href="/">
+       <%= image_tag "/images/aikon-white.png", class: "site_logo" %>
+     </a>
+     <ul class="globalNavi">
+       <li class="nav-item">
+         <%= link_to(about_index_path) do %>
+           <i class="far fa-question-circle"></i>
+           <%= link_to "ABOUT", about_index_path, class: "nav-link" %><span class="sr-only">(current)</span>
+         <% end %>
+       </li>
+       <% if logged_in? %>
+         <li class="nav-item">
+           <%= link_to(user_books_path(session[:user_id])) do %>
+             <i class="fas fa-book"></i>
+             <%= link_to "BOOKS", user_books_path(session[:user_id]), class: "nav-link" %><span class="sr-only">(current)</span>
+           <% end %>
+         </li>
+         <li class="nav-item">
+           <%= link_to(comments_index_path) do %>
+             <i class="fas fa-pencil-alt"></i>
+             <%= link_to "SENTENCE", comments_index_path, class: "nav-link" %><span class="sr-only">(current)</span>
+           <% end %>
+         </li>
+       <% end %>
+       <li class="nav-item">
+         <%= link_to(new_contact_path) do %>
+           <i class="far fa-envelope"></i>
+           <%= link_to "CONTACT", new_contact_path, class: "nav-link" %><span class="sr-only">(current)</span>
+         <% end %>
+       </li>
+       <li class="nav-item">
+         <% if logged_in? %>
+           <i class="far fa-times-circle"></i>
+           <%= link_to 'LOGOUT', '/signout', class: "nav-link" %><span class="sr-only">(current)</span>
+         <% else %>
+           <i class="fab fa-twitter"></i>
+           <%= link_to "LOGIN", '/auth/twitter', class: "nav-link btn-black" %><span class="sr-only">(current)</span>
+         <% end %>
+       </li>
+     </ul>
+   </nav><!-- /.globalNavi -->
+</header>
+
+   <!-- <div class="collapse navbar-collapse justify-content-md-center nav-menu" id="navbarsExample10">
      <ul class="navbar-nav mr-auto">
        <li class="nav-item">
          <%= link_to(about_index_path) do %>
@@ -59,4 +110,4 @@
        <% end %>
      </ul>
    </div>
- </nav>
+ </nav> -->
