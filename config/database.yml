@@ -21,8 +21,8 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: db
-  username: saekimasanori
-  password: password
+  username: ${USER_NAME}
+  password: ${USER_PASS}
 
 development:
   <<: *default
@@ -83,6 +83,4 @@ test:
 #
 production:
   <<: *default
-  database: bookmemo_app_production
-  username: root
-  password:
+  database: docker_production
