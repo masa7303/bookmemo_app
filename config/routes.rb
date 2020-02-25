@@ -17,8 +17,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'comments/index'
 
+  # twitterログイン
   get '/auth/:provider/callback' => 'sessions#create'
+
+  # ログアウト
   get '/signout' => 'sessions#destroy'
+
+  # テストユーザー
+  get '/testlogin' => 'sessions#testuser'
+
+  # お気に入りボタン
   post '/likes/:id' => 'likes#likes?'
   post '/likes/:id/like' => 'likes#like'
+
 end

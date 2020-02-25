@@ -6,7 +6,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @user = User.find(session[:user_id])
-    @books = Book.order(created_at: :desc).page(params[:page]).per(6)
+    @books = Book.where(user_id: current_user.id).order(created_at: :desc).page(params[:page]).per(6)
     if params[:title].present?
       @books = @books.get_by_title(params[:title])
     end

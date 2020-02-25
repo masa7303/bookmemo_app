@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  # ログイン時にDBの中にuserがいるか探して、いなければ新たに作成
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 

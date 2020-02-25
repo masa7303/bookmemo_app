@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
+
   def create
-    user = User.find_or_create_from_auth_hash(request.env['omniauth.auth']) #request.env['omniauth.auth']はTwitter認証で得た情報を格納するもの
+    # request.env['omniauth.auth']はTwitter認証で得た情報を格納するもの
+    user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
+    # 情報がある時は格納しトップページへリダイレクト
     if user
       session[:user_id] = user.id
       session[:name] = user.name
@@ -15,4 +18,13 @@ class SessionsController < ApplicationController
     flash[:notice] = "ログアウトしました。"
     redirect_to root_path
   end
+
+  # テストユーザーログイン時の処理
+  def testuser
+    user = User.find_or_create_from_auth_hash(uid: "1223956055631134723", provider: 'twitter')
+    session[:user_id] = user.id
+    session[:name] = user.name
+    redirect_to root_path, notice: "ログインしました。"
+  end
+
 end
