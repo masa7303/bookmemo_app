@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
   helper_method :current_user, :logged_in?, :authenticate
-  before_action :current_user
+  # before_action :current_user
 
     def current_user
       # session[:user_id]がnilの場合はreturnする

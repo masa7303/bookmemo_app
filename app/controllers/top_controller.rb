@@ -1,5 +1,8 @@
 class TopController < ApplicationController
+
+  #application.html.erbを適用したくない
   def index
-    render layout: false #application.html.erbを適用したくない
+    render layout: false
   end
+  
 end
