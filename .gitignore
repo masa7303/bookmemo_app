@@ -29,3 +29,4 @@
 .env
 secrets.yml
 credentials.yml.enc
+/config/database.yml
