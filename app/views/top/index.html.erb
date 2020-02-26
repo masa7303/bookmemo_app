@@ -20,14 +20,17 @@
           <li>文章をリマインド</li>
           <li>人とつながる</li>
         </ul>
-        <%= link_to "詳細はこちらから", about_index_path, class: "top_about_link" %>
         <% if current_user.nil? %>
-          <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
+          <a class="btn-social-circle btn-social-circle--twitter mt-30" href="/auth/twitter">
             <i class="fab fa-twitter"></i>
           </a>
           <i class="fas fa-arrow-up d-block login_icon_txt"></i>
           <p>LOGIN</p>
         <% end %>
+        <p class="top-caption">
+          「TESTUSER」からログインしていただければ、機能のデモをご覧いただけます。<br>
+          （登録や削除の機能はありませんので、ご了承ください。）
+        </p>
       </div>
     </div>
     <section class="top-under">

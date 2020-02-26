@@ -4,9 +4,6 @@
       <li class="nev-item">
         <a class="footer_nav-link footer-text" href="/">TOP</a>
       </li>
-      <li class="nev-item">
-        <%= link_to "ABOUT", about_index_path, class: "footer_nav-link" %><span class="sr-only">(current)</span>
-      </li>
       <% if logged_in? %>
         <li class="nev-item">
           <%= link_to "BOOKS", user_books_path(session[:user_id]), class: "footer_nav-link" %><span class="sr-only">(current)</span>
