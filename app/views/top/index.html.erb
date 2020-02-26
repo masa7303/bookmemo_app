@@ -21,12 +21,12 @@
           <li>人とつながる</li>
         </ul>
         <%= link_to "詳細はこちらから", about_index_path, class: "top_about_link" %>
-        <% if logged_in? %>
-        <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <i class="fas fa-arrow-up d-block login_icon_txt"></i>
-        <p>LOGIN</p>
+        <% if current_user.nil? %>
+          <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <i class="fas fa-arrow-up d-block login_icon_txt"></i>
+          <p>LOGIN</p>
         <% end %>
       </div>
     </div>
@@ -63,11 +63,11 @@
         </p>
       </div>
       <div class="text-center animation">
-        <% if logged_in? %>
-        <p class="about-login-ttl">ログインはこちらから！</p>
-        <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
+        <% if current_user.nil? %>
+          <p class="about-login-ttl">ログインはこちらから！</p>
+          <a class="btn-social-circle btn-social-circle--twitter" href="/auth/twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
         <% end %>
       </div>
     </section>
