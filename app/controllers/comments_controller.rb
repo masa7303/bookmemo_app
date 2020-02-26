@@ -43,4 +43,5 @@ class CommentsController < ApplicationController
       def comments_params
         params.required(:comment).permit(:body, :posted_at, :book_id, :book_title)
       end
+
 end

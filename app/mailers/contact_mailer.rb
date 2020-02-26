@@ -5,8 +5,11 @@ class ContactMailer < ApplicationMailer
   #
   #   en.contact_mailer.contact_mail.subject
   #
+
+  # メールがあればG_MAILアドレスで受信
   def contact_mail(contact)
     @contact = contact
     mail to: ENV['G_MAIL'], subject: "問い合わせがありました。"
   end
+
 end

@@ -25,4 +25,5 @@ class LikesController < ActionController::API
      return unless session[:user_id]
      @current_user ||= User.find(session[:user_id])
    end
+
 end

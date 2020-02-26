@@ -17,4 +17,5 @@ class ApplicationController < ActionController::Base
       return if logged_in?
       redirect_to root_path, alert: "ログインしてください"
     end
+
 end
