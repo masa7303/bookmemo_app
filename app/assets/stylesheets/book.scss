@@ -77,8 +77,13 @@
   margin-bottom: 20px;
 }
 
+.book_thumbnail {
+  width: 20vw;
+  height: 20vw;
+}
 @media screen and (max-width: 768px) {
   .book_thumbnail {
-    width: 70%;
+    width: 70vw;
+    height: 70vw;
   }
 }

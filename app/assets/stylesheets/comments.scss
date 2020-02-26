@@ -12,3 +12,66 @@
     border: 1px solid #a9a9a9;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .sp-heading {
+    font-size: 1.5rem;
+  }
+}
+
+.comments-table {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .comments-table {
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-all;
+  }
+}
+
+.comments-table td {
+  height: 50px;
+  word-wrap: break-word;
+}
+@media screen and (max-width: 768px) {
+  height: 30px;
+}
+
+.comments-table .first-td {
+  width: 10%;
+}
+@media screen and (max-width: 768px) {
+  .comments-table .first-td {
+    width: 30%;
+  }
+}
+
+.comments-table .second-td {
+  width: 80%;
+}
+@media screen and (max-width: 768px) {
+  .comments-table .second-td {
+    max-width: 50%;
+  }
+}
+
+.comments-table .third-td {
+  width: 10%;
+}
+@media screen and (max-width: 768px) {
+  .comments-table .third-td {
+    width: 20%;
+  }
+}
+
+.comment_submit_btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 10px;
+}

@@ -1,8 +1,7 @@
-<div class="row">
+
   <tr>
     <td><%= render "likes/like", :comment => comment %></td>
-    <td class='text-right'><%= comment.posted_at.strftime("%Y/%m/%d") %></td>
-    <td class='text-left'><%= comment.body %></td>
-    <td><%= link_to "削除", "#{comment.book_id}/comments/#{comment.id}", method: :delete, class: "btn btn-danger" %></td>
+    <td class='first-td'><%= comment.posted_at.strftime("%Y/%m/%d") %></td>
+    <td class='second-td'><%= comment.body %></td>
+    <td class="third-td"><%= link_to "削除", "#{comment.book_id}/comments/#{comment.id}", method: :delete, class: "btn btn-danger" %></td>
   </tr>
-</div>
