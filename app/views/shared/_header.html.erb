@@ -9,12 +9,6 @@
        <%= image_tag "/images/aikon-white.png", class: "site_logo" %>
      </a>
      <ul class="globalNavi">
-       <li class="nav-item">
-         <%= link_to(about_index_path) do %>
-           <i class="far fa-question-circle"></i>
-           <%= link_to "ABOUT", about_index_path, class: "nav-link" %><span class="sr-only">(current)</span>
-         <% end %>
-       </li>
        <% if logged_in? %>
          <li class="nav-item">
            <%= link_to(user_books_path(session[:user_id])) do %>
@@ -53,57 +47,3 @@
      </ul>
    </nav><!-- /.globalNavi -->
 </header>
-
-
-   <!-- <div class="collapse navbar-collapse justify-content-md-center nav-menu" id="navbarsExample10">
-     <ul class="navbar-nav mr-auto">
-       <li class="nav-item">
-         <%= link_to(about_index_path) do %>
-           <i class="far fa-question-circle"></i>
-           <%= link_to "ABOUT", about_index_path, class: "nav-link" %><span class="sr-only">(current)</span>
-         <% end %>
-       </li>
-       <% if logged_in? %>
-         <li class="nav-item">
-           <%= link_to(user_books_path(session[:user_id])) do %>
-             <i class="fas fa-book"></i>
-             <%= link_to "BOOKS", user_books_path(session[:user_id]), class: "nav-link" %><span class="sr-only">(current)</span>
-           <% end %>
-         </li>
-         <li class="nav-item">
-           <%= link_to(comments_index_path) do %>
-             <i class="fas fa-pencil-alt"></i>
-             <%= link_to "SENTENCE", comments_index_path, class: "nav-link" %><span class="sr-only">(current)</span>
-           <% end %>
-         </li>
-       <% end %>
-       <li class="nav-item">
-         <%= link_to(new_contact_path) do %>
-           <i class="far fa-envelope"></i>
-           <%= link_to "CONTACT", new_contact_path, class: "nav-link" %><span class="sr-only">(current)</span>
-         <% end %>
-       </li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <% if logged_in? %>
-            <i class="far fa-times-circle"></i>
-            <%= link_to 'LOGOUT', '/signout', class: "nav-link" %><span class="sr-only">(current)</span>
-          <% else %>
-            <i class="fab fa-twitter"></i>
-            <%= link_to "LOGIN", '/auth/twitter', class: "nav-link btn-black" %><span class="sr-only">(current)</span>
-          <% end %>
-        </li>
-      </ul>
-     <ul class="navbar-nav">
-       <% if session[:name] %>
-         <li class="nav-item dropdown mr-auto">
-           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= "#{session[:name]}さん、こんにちは" %></a>
-           <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="/signout">Logout</a>
-            </div>
-         </li>
-       <% end %>
-     </ul>
-   </div>
- </nav> -->
