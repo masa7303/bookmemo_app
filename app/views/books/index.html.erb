@@ -15,8 +15,8 @@
 
   <div class="text-right search-box">
     <%= form_tag(books_path,:method => 'get') do %>
-      <%= text_field_tag :title, params[:title], placeholder: "本のタイトルを入力" %>
-      <%= submit_tag 'Search', :name => nil %>
+      <%= text_field_tag :title, params[:title], placeholder: "本のタイトルを入力", class: "search-book-ttl" %>
+      <%= submit_tag 'Search', :name => nil, class: "search-book-btn" %>
     <% end %>
   </div>
 
@@ -25,15 +25,28 @@
       <% @books.each do |book| %>
         <div class="col-md-4">
           <div class="card text-center shadow-lg">
-            <div>
-              <% if book.picture.attached? %>
-                <%= link_to image_tag(book.picture, class: "card-img-top"), book %>
-              <% else %>
-                <%= link_to image_tag('/images/noimage.png', class: "card-img-top"), book %>
-              <% end %>
+            <div class="card-img-top">
+              <div class="card-img-top-inner">
+                <% if book.picture.attached? %>
+                  <%= link_to image_tag(book.picture, class: "card-img-top"), book %>
+                <% else %>
+                  <%= link_to image_tag('/images/noimage.png'), book %>
+                <% end %>
+              </div>
             </div>
-            <h1 class="card-title"><%= book.title %></h1>
-            <p class="card-text"><%= book.author %></p>
+
+            <% if book.title.present? %>
+              <h1 class="card-title"><%= book.title %></h1>
+            <% else %>
+              <h1 class="card-title">（タイトルが未登録）</h1>
+            <% end %>
+
+            <% if book.author.present? %>
+              <p class="card-text"><%= book.author %></p>
+            <% else %>
+              <p class="card-text">（著者が未登録）</p>
+            <% end %>
+
             <p>
               <%= link_to '編集', edit_book_path(book), class: "btn btn-primary" %>
               <%= link_to '削除', book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
