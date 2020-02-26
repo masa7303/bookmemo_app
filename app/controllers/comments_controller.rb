@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   protect_from_forgery
   before_action :set_post, except: [:index]
+  # テストユーザーでログインしている時の制限
+  before_action :if_not_admin, only: [:new, :create, :destroy]
 
   def new
     @comment = Comment.new(posted_at: Time.current, book_title: @book[:title])

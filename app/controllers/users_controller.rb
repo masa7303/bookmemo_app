@@ -17,7 +17,8 @@ class UsersController < ApplicationController
         image: auth.info.image,
         name: auth.info.name,
         nickname: auth.info.nickname,
-        location: auth.info.location
+        location: auth.info.location,
+        admin: true
         )
     end
 

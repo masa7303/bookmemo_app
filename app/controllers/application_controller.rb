@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
-  helper_method :current_user, :logged_in?, :authenticate
+  helper_method :current_user, :logged_in?, :authenticate, :if_not_admin
   # before_action :current_user
 
     def current_user
@@ -16,6 +16,13 @@ class ApplicationController < ActionController::Base
     def authenticate
       return if logged_in?
       redirect_to root_path, alert: "ログインしてください"
+    end
+
+    # テストユーザーの時は、トップページへリダイレクトする
+    def if_not_admin
+      if current_user.uid = ENV['TESTLOGIN_ID']
+        redirect_to root_path
+      end
     end
 
 end
