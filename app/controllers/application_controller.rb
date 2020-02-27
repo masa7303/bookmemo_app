@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
     # テストユーザーの時は、トップページへリダイレクトする
     def if_not_admin
-      if current_user.uid = ENV['TESTLOGIN_ID']
+      if current_user.id == ENV['TESTLOGIN_ID']
         redirect_to root_path
       end
     end

@@ -18,7 +18,6 @@ class UsersController < ApplicationController
         name: auth.info.name,
         nickname: auth.info.nickname,
         location: auth.info.location,
-        admin: true
         )
     end
 
