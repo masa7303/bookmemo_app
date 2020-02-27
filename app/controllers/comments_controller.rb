@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
     # 昨日書いた記録
     @comments2 = @comments.created_yesterday.order(posted_at: :desc)
     # 三日前に書いた記録
-    @comments3 = @comments.created_three_days_ago.order(posted_at: :desc)
+    @comments3 = @comments.created_three_days_ago
     # 一週間前に書いた記録
     @comments4 = @comments.created_a_week_ago.order(posted_at: :desc)
     # 一ヶ月前に書いた記録

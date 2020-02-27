@@ -17,7 +17,7 @@
 
   <% if @comments2.present? %>
     <h2 class="bg-secondary text-white d-block py-2">１日前</h2>
-    <% @comments.each do |comment| %>
+    <% @comments2.each do |comment| %>
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
@@ -25,7 +25,7 @@
 
   <% if @comments3.present? %>
     <h2 class="bg-secondary text-white d-block py-2">３日前</h2>
-    <% @comments.each do |comment| %>
+    <% @comments3.each do |comment| %>
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
@@ -33,7 +33,7 @@
 
   <% if @comments4.present? %>
     <h2 class="bg-secondary text-white d-block py-2">１週間前</h2>
-    <% @comments.each do |comment| %>
+    <% @comments4.each do |comment| %>
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
@@ -41,7 +41,7 @@
 
   <% if @comments5.present? %>
     <h2 class="bg-secondary text-white d-block py-2">１ヶ月前</h2>
-    <% @comments.each do |comment| %>
+    <% @comments5.each do |comment| %>
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
