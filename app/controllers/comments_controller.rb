@@ -1,16 +1,19 @@
 class CommentsController < ApplicationController
   protect_from_forgery
   before_action :set_post, except: [:index]
+  before_action :current_user, only: [:new, :create]
   # テストユーザーでログインしている時の制限
-  before_action :if_not_admin, only: [:new, :create, :destroy]
+  # before_action :if_not_admin, only: [:new, :create, :destroy]
 
   def new
     @comment = Comment.new(posted_at: Time.current, book_title: @book[:title])
   end
 
   def create
+    @user = User.find(session[:user_id])
     @comment = @book.comments.build(comments_params)
     @comment.book_title = @book.title
+    @comment.user_id = @user.id
     @comment.save
     #@book.comments.create!(comments_params).merge(:book_title => "#{@book.title}"))
     redirect_to @book
@@ -22,7 +25,7 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.all
+    @comments = Comment.where(user_id: current_user.id)
     # 今日書いた記録
     @comments1 = @comments.created_today.order(posted_at: :desc)
     # 昨日書いた記録
