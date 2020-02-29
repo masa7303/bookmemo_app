@@ -1,5 +1,21 @@
 html {
   font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#wrap {
+  position: relative;
+  height: auto !important; /*IE6対策*/
+  height: 100%; /*IE6対策*/
+  min-height: 100%;
+}
+/*メインコンテンツ*/
+#contents {
+  padding-bottom: 8em; /*フッターの高さと同じ*/
 }
 
 #home {

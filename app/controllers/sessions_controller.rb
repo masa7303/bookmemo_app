@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   # テストユーザーログイン時の処理
   def testuser
     user = User.find_or_create_from_auth_hash(uid: "ENV['TESTLOGIN_ID']", provider: 'twitter')
-    session[:user_id] = user.id
+    session[:user_id] = 4
     session[:name] = user.name
     redirect_to root_path, notice: "ログインしました。"
   end

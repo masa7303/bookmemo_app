@@ -246,6 +246,13 @@ a:hover {
 }
 
 // フッター
+footer {
+  bottom: 0;
+  width: 100%;
+  height: 8em;
+  position: absolute;
+}
+
 .footer_nav-link {
   color: #fff;
   margin-right: 10px;

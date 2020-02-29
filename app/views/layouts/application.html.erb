@@ -5,18 +5,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <header>
-    <%= render "shared/header" %>
-  </header>
-
   <body>
-    <div class="containner">
-      <%= yield %>
+    <div id="wrap">
+      <%= render "shared/header" %>
+      <div id="contents">
+        <div class="containner">
+          <%= yield %>
+        </div>
+      </div>
+      <%= render "shared/footer" %>
     </div>
   </body>
-
-  <footer>
-    <%= render "shared/footer" %>
-  </footer>
 </html>

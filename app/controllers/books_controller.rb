@@ -1,8 +1,9 @@
 class BooksController < ApplicationController
+  protect_from_forgery :except => ["destroy"]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :current_user, only: [:new, :create]
   # テストユーザーでログインしている時の制限
-  # before_action :if_not_admin, only: [:new, :edit, :create, :update, :destroy]
+  before_action :if_not_admin, only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @user = User.find(session[:user_id])
