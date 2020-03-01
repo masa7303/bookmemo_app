@@ -13,10 +13,10 @@ services:
 
     #環境変数
     environment:
-      MYSQL_USER: ${USER_NAME}
-      MYSQL_PASSWORD: ${USER_PASS}
-      MYSQL_DATABASE: ${DATABASE}
-      MYSQL_ROOT_PASSWORD: ${ROOT_PASSWORD}
+      MYSQL_USER: <%= ENV.fetch('USER_NAME') %>
+      MYSQL_PASSWORD: <%= ENV.fetch('USER_PASS') %>
+      MYSQL_DATABASE: <%= ENV.fetch('DATABASE') %>
+      MYSQL_ROOT_PASSWORD: <%= ENV.fetch('ROOT_PASSWORD') %>
 
     #コンテナがマウントするディレクトリ
     #mysqlのファイルをローカルディレクトリに保存するようにしている
