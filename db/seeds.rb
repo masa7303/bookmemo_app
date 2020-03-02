@@ -10,8 +10,3 @@ AdminUser.create!(
   password: 'password',
   password_confirmation: 'password')
   if Rails.env.development?
-
-User.create!(
-  uid: "ENV['TESTLOGIN_ID']",
-  provider: 'twitter'
-)

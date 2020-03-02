@@ -16,8 +16,9 @@ class SessionsController < ApplicationController
 
   # テストユーザーログイン時の処理
   def testuser
-    user = User.find_or_create_from_auth_hash(uid: "ENV['TESTLOGIN_ID']", provider: 'twitter')
+    user = User.find_or_create_from_auth_hash(uid: "ENV['TESTLOGIN_ID']", provider: 'twitter', name: 'テストユーザー')
     session[:user_id] = user.id
+    session[:testuser] = 1
     redirect_to root_path, notice: "ログインしました。"
   end
 
