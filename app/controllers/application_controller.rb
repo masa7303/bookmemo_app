@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
     # テストユーザーの時は、トップページへリダイレクトする
     def if_not_admin
-      if session[:user_id] == 4
+      if session[:user_id] == 1
         redirect_to root_path
       end
     end
