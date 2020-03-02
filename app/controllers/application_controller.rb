@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
 
     def current_user
       # session[:user_id]がnilの場合はreturnする
-      return unless session[:user_id]
-      @current_user ||= User.find(session[:user_id])
+      # return unless session[:user_id]
+      if session[:user_id]
+        @current_user ||= User.find(session[:user_id])
+      end
     end
 
     def logged_in?
