@@ -1,4 +1,4 @@
-<i id="<%= comment.id %>" class="fa fa-heart-o unlike"></i>
+<i id="<%= comment.id %>" class="far fa-heart unlike"></i>
 
 <script type="text/javascript">
   $(function(){
@@ -8,8 +8,8 @@
     success: function(data){
       console.log(data)
       if (data){
-        $("#<%= comment.id %>").removeClass('fa fa-heart-o unlike');
-        $("#<%= comment.id %>").addClass('fa fa-heart like');
+        $("#<%= comment.id %>").removeClass('far fa-heart unlike');
+        $("#<%= comment.id %>").addClass('fas fa-heart like');
       }
     }
     });
@@ -23,11 +23,11 @@
       success: function(data){
         console.log(data)
         if($("#<%= comment.id %>").hasClass('unlike') && data){
-          $("#<%= comment.id %>").removeClass('fa fa-heart-o unlike');
-          $("#<%= comment.id %>").addClass('fa fa-heart like');
+          $("#<%= comment.id %>").removeClass('far fa-heart unlike');
+          $("#<%= comment.id %>").addClass('fas fa-heart like');
         }else{
-          $("#<%= comment.id %>").removeClass('fa fa-heart like');
-          $("#<%= comment.id %>").addClass('fa fa-heart-o unlike');
+          $("#<%= comment.id %>").removeClass('fas fa-heart like');
+          $("#<%= comment.id %>").addClass('far fa-heart unlike');
         }
       }
     });
