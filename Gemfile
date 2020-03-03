@@ -38,6 +38,7 @@ gem 'bootstrap', '~> 4.2.1'
 gem 'rails-i18n', '~> 5.1'
 gem "jquery-rails"
 gem 'mini_magick', '~> 4.8'
+gem 'aws-sdk-s3', require: false
 gem 'dotenv-rails'
 gem 'devise'
 gem 'activeadmin'
