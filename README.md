@@ -1,6 +1,6 @@
 # BOOKMEMO
 http://bookmemo-app.com/
-(https://user-images.githubusercontent.com/50639339/75736010-71b17700-5d3f-11ea-9705-1b2a44311bab.png)
+<img src="https://user-images.githubusercontent.com/50639339/75736010-71b17700-5d3f-11ea-9705-1b2a44311bab.png">
 
 - メニュー内のテストログインボタンから、【テストユーザー】としてログインできます。
 - テストユーザー情報の編集は出来ない仕様になっています。ご了承ください。
