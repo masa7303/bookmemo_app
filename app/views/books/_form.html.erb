@@ -20,24 +20,29 @@
     <div class="field">
       <tr>
         <th><%= form.label :写真 %></th>
-        <td>
-          <div><%= form.file_field :new_picture %></div>
+        <td class="pic-field">
           <% if @book.picture.attached? %>
-            <div>
+            <div class="pic-width80 mb-30">
               <%= image_tag @book.picture.variant(resize: "128x128") %>
-              <%= form.check_box :remove_picture %>
-              <%= form.label :remove_picture %>
+              <%= form.check_box :remove_picture, class: "remove_pic_cheakbox" %>
+              <%= form.label :写真を削除 %>
+            </div>
+          <% else %>
+            <div class="pic-width80 mb-30">
+              <%= image_tag '/images/noimage.png', class: "noimg-resize" %>
             </div>
           <% end %>
+          <div class="new_pic_formbox"><%= form.file_field :new_picture %></div>
         </td>
       </tr>
     </div>
+
   </table>
 
-    <div class="actions">
-        <%= form.submit class: "btn-flat-border" %>
-    </div>
-  <% end %>
+  <div class="actions">
+    <%= form.submit class: "btn-flat-border" %>
+  </div>
+<% end %>
 
 <div class="back_link">
   <%= link_to '戻る', books_path %>

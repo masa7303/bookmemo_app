@@ -26,7 +26,7 @@
   </p>
 
   <% if @comments.present? %>
-    <h2 class="mt-30 sp-heading">登録した文章</h2>
+    <h2 class="mt-30 sp-heading fs-14">登録した文章</h2>
     <div id="comments">
       <table class="comments-table table-striped">
         <%= render @book.comments %>
@@ -34,11 +34,11 @@
     </div>
   <% end %>
 
-  <div class="mt-30">
+  <div class="mt-30 fs-14">
     <%= render 'comments/new', post: @post %>
   </div>
 
-  <div class="mt-50 mb-50">
+  <div class="mt-50 mb-50 fs-14">
     <%= link_to '編集', edit_book_path(@book) %> |
     <%= link_to '戻る', books_path %>
   </div>

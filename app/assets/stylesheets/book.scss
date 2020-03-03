@@ -7,7 +7,7 @@
 }
 
 .new_book_table {
-  width: 60%!important;
+  width: 80%!important;
   font-size: 1.4rem;
   line-height: 1.4rem;
 }
@@ -23,6 +23,10 @@
   .new_book_table td {
     display: block;
     height: 30px;
+  }
+  .pic-field {
+    display: inline-block!important;
+    height: 250px!important;
   }
 }
 
@@ -47,12 +51,39 @@
 @media screen and (max-width: 768px) {
   .new_book_table input {
     width: 100%;
+    border: 1px solid #a9a9a9;
   }
   #book_title,
   #book_author,
    {
     border: 1px solid #a9a9a9;
   }
+}
+
+.pic-width80 {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .pic-width80 {
+    text-align: center;
+  }
+}
+
+.remove_pic_cheakbox {
+  width: 3%!important;
+}
+@media screen and (max-width: 768px) {
+  .remove_pic_cheakbox {
+    width: 100%!important;
+    margin-top: 10px;
+  }
+}
+
+.noimg-resize {
+  width: 128px;
+  height: 128px;
 }
 
 .btn-flat-border {
@@ -69,6 +100,7 @@
 @media screen and (max-width: 768px) {
   .btn-flat-border {
     margin-bottom: 20px;
+    background-color: #fff;
   }
 }
 
