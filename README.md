@@ -1,5 +1,5 @@
 # BOOKMEMO
-http://bookmemo-app.com/<br>
+https://bookmemo-app.com/<br>
 <img src="https://user-images.githubusercontent.com/50639339/75736010-71b17700-5d3f-11ea-9705-1b2a44311bab.png">
 
 - メニュー内のテストログインボタンから、【テストユーザー】としてログインできます。
@@ -40,7 +40,7 @@ http://bookmemo-app.com/<br>
 - CircleCI
 
 # AWS構成図
-<img src="https://user-images.githubusercontent.com/50639339/75739643-c9081500-5d48-11ea-82d5-976fb7626560.png">
+<img src="https://user-images.githubusercontent.com/50639339/75868541-8b3fe500-5e4b-11ea-8407-d1ba8012c17c.png">
 
 # フロントエンド
 - Bootstrap
