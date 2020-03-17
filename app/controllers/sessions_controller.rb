@@ -4,6 +4,8 @@ class SessionsController < ApplicationController
     # request.env['omniauth.auth']はTwitter認証で得た情報を格納するもの
     user = User.find_or_create_from_auth_hash(request.env['omniauth.auth'])
     # 情報がある時は格納しトップページへリダイレクト
+    session[:user_name] = user.name
+    session[:user_nickname] = user.nickname
     session[:user_id] = user.id
     redirect_to root_path
   end

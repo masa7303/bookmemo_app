@@ -7,12 +7,23 @@
 </div>
 
 <div class="container text-center">
+  <% if @comments.present? %>
+    <h2 class="bg-secondary text-white d-block py-2">登録した文章</h2>
+    <% @comments.each do |comment| %>
+      <div class="comment-content"><%= comment.body %></div>
+      <p class="source">(<%= comment.book_title %>)</p>
+    <% end %>
+  <% end %>
+
   <% if @comments1.present? %>
     <h2 class="bg-secondary text-white d-block py-2">今日</h2>
     <% @comments1.each do |comment| %>
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
+  <% else %>
+    <h2 class="bg-secondary text-white d-block py-2">今日</h2>
+    <p>今日登録した文章はありません。</p>
   <% end %>
 
   <% if @comments2.present? %>
@@ -21,6 +32,9 @@
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
+  <% else %>
+    <h2 class="bg-secondary text-white d-block py-2">１日前</h2>
+    <p>１日前に登録した文章はありません。</p>
   <% end %>
 
   <% if @comments3.present? %>
@@ -29,6 +43,9 @@
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
+  <% else %>
+    <h2 class="bg-secondary text-white d-block py-2">３日前</h2>
+    <p>３日前に登録した文章はありません。</p>
   <% end %>
 
   <% if @comments4.present? %>
@@ -37,6 +54,9 @@
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
+  <% else %>
+    <h2 class="bg-secondary text-white d-block py-2">１週間前</h2>
+    <p>１週間前に登録した文章はありません。</p>
   <% end %>
 
   <% if @comments5.present? %>
@@ -45,6 +65,9 @@
       <div class="comment-content"><%= comment.body %></div>
       <p class="source">(<%= comment.book_title %>)</p>
     <% end %>
+  <% else %>
+    <h2 class="bg-secondary text-white d-block py-2">１ヶ月前</h2>
+    <p>１ヶ月前に登録した文章はありません。</p>
   <% end %>
 
   <% if @favoritecomments.blank? %>

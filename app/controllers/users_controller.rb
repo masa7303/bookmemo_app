@@ -14,8 +14,8 @@ class UsersController < ApplicationController
         provider: auth.provider,
         #email:    User.dummy_email(auth),
         #password: Devise.friendly_token[0, 20],
-        image: auth.info.image,
-        name: auth.info.name,
+        image: auth.image,
+        name: auth.name,
         nickname: auth.info.nickname,
         location: auth.info.location,
         )

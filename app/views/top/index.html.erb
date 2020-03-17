@@ -12,6 +12,10 @@
       </header>
         <div id="contents">
           <div id="home">
+            <% if logged_in? %>
+              <p class="login-message">ログインしました。</p>
+            <% end %>
+
             <%= image_tag "/images/topbg.jpg", class: "topbg_img", alt: "" %>
             <div class="top_ttl text-center">
               <h1>BOOK  MEMO</h1>
@@ -28,7 +32,7 @@
                 <i class="fas fa-arrow-up d-block login_icon_txt"></i>
                 <p>LOGIN</p>
               <% end %>
-              <p class="top-caption">
+              <p class="top-caption mt-10">
                 「TESTUSER」からログインしていただければ、機能のデモをご覧いただけます。<br>
                 （登録や削除の機能はありませんので、ご了承ください。）
               </p>
