@@ -1,7 +1,7 @@
-Factory_bot.define do
+FactoryBot.define do
   factory :user do
-    name { 'テストユーザー' }
-    uid { 'ENV['TESTLOGIN_ID']' }
-    provider { 'twitter' }
+    uid { '12345' }
+    provider { "twitter" }
+    name { "テストユーザー" }
   end
 end
