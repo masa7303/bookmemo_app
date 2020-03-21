@@ -8,6 +8,9 @@ class Book < ApplicationRecord
 
   belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
+  # バリデーション
+  validates :title, presence: true
+  validates :author, presence: true
   # new_pictureが nil でも false でも無い場合に限りバリデーションを行う
   validate  if: :new_picture do
     # respond_to はあるオブジェクトが特定のメソッドを持っているかどうかを調べる

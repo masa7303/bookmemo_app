@@ -3,9 +3,9 @@
 one:
   title: MyString
   author: MyString
-  picture: MyString
+  user_id: 1
 
 two:
   title: MyString
   author: MyString
-  picture: MyString
+  user_id: 1

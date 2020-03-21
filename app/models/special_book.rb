@@ -1,0 +1,2 @@
+class SpecialBook < ApplicationRecord
+end
